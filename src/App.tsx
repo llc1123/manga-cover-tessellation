@@ -65,8 +65,8 @@ const calcPoints = (
   while (cursor < res.length) {
     res.push(
       ...getNearPoints(res[cursor])
-        .filter((p) => isPointValid(calcRealCoordinates(p)))
-        .filter((p) => !hasCoordinates(res, p)),
+        .filter((p) => !hasCoordinates(res, p))
+        .filter((p) => isPointValid(calcRealCoordinates(p))),
     )
     cursor += 1
   }
