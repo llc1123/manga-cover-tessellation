@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState, useCallback } from 'react'
 import './App.css'
+import { mangaCovers } from './const'
 
 const calcPoints = (
   containerSize: Dimension,
@@ -111,7 +112,13 @@ const App: React.FC = () => {
         <div
           className="point"
           key={idx}
-          style={{ left: `calc(50% + ${p[0]}px`, top: `calc(50% - ${p[1]}px)` }}
+          style={{
+            left: `calc(50% + ${p[0]}px`,
+            top: `calc(50% - ${p[1]}px)`,
+            backgroundImage: `url(${mangaCovers[idx % 30].concat(
+              '@300w.jpg',
+            )})`,
+          }}
         />
       ))}
     </div>
